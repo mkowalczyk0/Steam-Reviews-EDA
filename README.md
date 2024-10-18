@@ -45,7 +45,7 @@ Highlight trends, relationships, and important factors affecting the target vari
 The data is already cleansed. There is no further cleaning that needs to take palce.
 
 ### Dataset Descriptive Statistics
-![image](https://github.com/user-attachments/assets/d7df5a4a-d99a-456a-ba49-32061ff6d412)
+![image](https://github.com/user-attachments/assets/05cad7bf-5e40-4849-97e7-8620b7388749)
 
 
 
@@ -53,7 +53,7 @@ Now lets get into the fun stuff:
 
 # Distribution Analysis:
 ### Distribution of Playtime at Review
-![image](https://github.com/user-attachments/assets/3e21c2c3-25ec-45db-a21e-ae7e51a54ce1)
+![image](https://github.com/user-attachments/assets/523cfad6-ef5b-4932-ad8b-567c1510dee6)
 ```python
 plt.figure(figsize=(8, 5))
 sns.histplot(data['author_playtime_at_review'], bins=30, kde=True)
@@ -64,7 +64,7 @@ plt.xlim(0, 2000)
 plt.show()
 ```
 ### Distribution of Upvotes
-![image](https://github.com/user-attachments/assets/5630187b-332f-4931-9d81-3e184631a406)
+![image](https://github.com/user-attachments/assets/f3410c60-8470-4732-95b7-adf901354cb0)
 ```python
 plt.figure(figsize=(8, 5))
 sns.histplot(data['votes_up'], bins=30, kde=True)
@@ -75,7 +75,7 @@ plt.xlim(0, 40)
 plt.show()
 ```
 ### Distribution of Funny Votes
-![image](https://github.com/user-attachments/assets/b68a713d-9683-4b01-b965-98b95fa029c5)
+![image](https://github.com/user-attachments/assets/022bbdaa-b164-43eb-a565-ab5482ab082c)
 ```python
 plt.figure(figsize=(8, 5))
 sns.histplot(data['votes_funny'], bins=30, kde=True)
@@ -86,7 +86,7 @@ plt.xlim(0, 10)
 plt.show()
 ```
 ### Proportion of Positive vs. Negative Reviews
-![image](https://github.com/user-attachments/assets/b298ffec-0f0a-41b9-882d-63b14834fcd6)
+![image](https://github.com/user-attachments/assets/283e2f1d-521f-4092-9b8d-76770f88a5ac)
 ```python
 plt.figure(figsize=(8, 5))
 ax = sns.countplot(x='voted_up', data=data)
@@ -103,7 +103,7 @@ for p in ax.patches:
 
 # Correlation Analysis
 #### We'll use a correlation matrix and plot a heatmap to visualize the correlation between attributes
-![image](https://github.com/user-attachments/assets/71acf3da-3774-4d29-b089-71b423d5bcc3)
+![image](https://github.com/user-attachments/assets/f99ceb55-203e-4a32-8fa2-d76a94c65217)
 ```python
 correlation_matrix = data[['author_playtime_at_review', 'votes_up', 'votes_funny', 'constructive']].corr()
 
@@ -115,7 +115,7 @@ plt.show()
 
 # Visualization of Relationships
 ### Scatter plot of playtime vs. upvotes
-![image](https://github.com/user-attachments/assets/13de1260-788f-4538-abe4-a4ec9dee8bad)
+![image](https://github.com/user-attachments/assets/f233da2c-cc0f-4a8c-a8d3-f54291c963d6)
 ```python
 plt.figure(figsize=(8, 5))
 sns.scatterplot(x='author_playtime_at_review', y='votes_up', data=data)
@@ -127,7 +127,7 @@ plt.ylim(0, 50)
 plt.show()
 ```
 ### Box plot for votes_up based on constructive reviews
-![image](https://github.com/user-attachments/assets/37cd02b6-9f33-4cd4-ab08-2a67f50c7932)
+![image](https://github.com/user-attachments/assets/9c2737d5-2215-48a4-8482-c0d95cc73870)
 ```python
 plt.figure(figsize=(8, 5))
 sns.boxplot(x='constructive', y='votes_up', data=data)
@@ -203,7 +203,7 @@ plt.xlabel('Importance')
 plt.ylabel('Features')
 plt.show()
 ```
-![image](https://github.com/user-attachments/assets/d17c277f-c3c6-4dd5-ae62-18ec25a2633d)
+![image](https://github.com/user-attachments/assets/8bceff9f-8f33-48f2-8956-58e1111c9f8b)
 
 
 # Scenario Analysis
@@ -234,7 +234,7 @@ for index, row in scenarios.iterrows():
 print(scenarios)
 ```
 #### After performing the a sensitivity analysis by varying playtime and votes_up to see how these factors influence the predicted constructiveness of reviews. The final output is a DataFrame that shows the predicted constructiveness for each combination of playtime and votes_up, allowing for an understanding of how these variables impact the model's predictions
-![image](https://github.com/user-attachments/assets/4cc94929-7b6b-400a-82ed-76f536230681)
+![image](https://github.com/user-attachments/assets/d4651b00-6c24-4044-9fb3-7d12cc774bf9)
 
 
 
@@ -251,7 +251,7 @@ def get_sentiment(review):
 data['sentiment'] = data['review'].apply(get_sentiment)
 print(data[['review', 'sentiment']].head())
 ```
-![image](https://github.com/user-attachments/assets/df6458c3-6447-46fe-940c-652fb99c7486)
+![image](https://github.com/user-attachments/assets/5ff331bb-be32-4e33-afd9-dcadd9233236)
 
 
 ### Group the Data by Game
@@ -263,7 +263,7 @@ print(game_sentiment_sorted)
 ```
 
 # Visualized Top Games with the Best sentiment
-![image](https://github.com/user-attachments/assets/739e891c-7cd9-4660-b173-28771f07de4a)
+![image](https://github.com/user-attachments/assets/b24cb5ac-4424-4408-aa85-93394203ba9b)
 
 ```python
 plt.figure(figsize=(12, 6))
