@@ -1,5 +1,5 @@
 # Steam Reviews EDA
-Exploratory Data Analysis (EDA) and sensitivity analysis on a Steam Game Reviews
+Exploratory Data Analysis (EDA) and sensitivity analysis on Steam Game Reviews
 
 
 ### 1. Loading and Understanding the Dataset
